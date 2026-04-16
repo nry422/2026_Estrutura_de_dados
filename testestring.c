@@ -7,8 +7,9 @@ int main()
    printf("digite algo: ");
    scanf("%s", &string);
 
-   for (int i=0; i<10; i++){
-         if (string[i] == 'a' || string[i] == 'e' || string[i] == 'i' || string[i] == 'o' || string[i] == 'u') {
+   for (int i=0; i<strlen(string); i++){
+         char s = tolower(string[i]);
+         if (s == 'a' || s == 'e' || s == 'i' || s == 'o' || s == 'u') {
             contvogal++;
          }
       //printf("%c %d\n", string[i], string[i]);
