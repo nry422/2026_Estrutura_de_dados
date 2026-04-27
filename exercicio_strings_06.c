@@ -14,12 +14,15 @@ int main()
     if (strlen(string) > 4)  //se tiver mais de 4 digitos é invalido, o enunciado pede de 0 a 9999
     {
         printf("numero invalido\n");
-        return 0;
+        return -1;
     }
 
     for (i=0; string[i] != '\0'; i++)   //para quando achar o \0!! poderia ter usado o strlen mas achei isso ainda mais simples?
     {
-
+        if (string[i] < '0' || string[i] > '9'){ //checa se sao caracters validos entre 0 e 9
+            printf("caracters invalidos");
+            return -2;
+        }
         saida = saida + (string[i] - 48); //subtrair 48 para achar valor int do caracter ASCII para os numeros
 
     }

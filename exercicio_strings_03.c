@@ -11,7 +11,7 @@ int main()
 
     for (i=0; frase[i] != '\0'; i++) //para quando achar o \0!! poderia ter usado o strlen mas achei isso ainda mais simples?
     {
-        if (frase[i] >97 && frase[i] <= 122) //entre 97 e 122 são letras minusculas, se forem elas
+        if (frase[i] >= 'a' && frase[i] <= 'z') //entre 97 e 122 são letras minusculas, se forem elas
         {
             frase[i] = frase[i] -32; //tira 32, que equivale ao valor da maiuscula!!
         }
