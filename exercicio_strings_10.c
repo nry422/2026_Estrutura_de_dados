@@ -43,7 +43,4 @@ int main()
         printf("Nao e palindroma!!!");
     }
 
-
-
-
 }
