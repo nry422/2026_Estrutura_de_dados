@@ -136,10 +136,11 @@ int main()
          }
          while (fscanf(file, "%d;%[^;];%c;%f\n",
                        &vAluno[qtd].matr, &vAluno[qtd].nome, &vAluno[qtd].sexo, &vAluno[qtd].alt) == 4) {
-            printf("%d, %s, %c, %.2f.\n", vAluno[qtd].matr, vAluno[qtd].nome, vAluno[qtd].sexo, vAluno[qtd].alt);
+            printf("#");
+            Sleep(50);
             qtd++;
          }
-
+         printf("\n");
          fclose(file);
          printf("%d alunos carregados com sucesso!\n", qtd);
          break;
