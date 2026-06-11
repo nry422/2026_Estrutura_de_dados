@@ -156,3 +156,4 @@ int main()
    while (op != 0);
 }
 
+//adicionar carregar arquivo ao abrir e salvar ao sair com funcoes para cada
