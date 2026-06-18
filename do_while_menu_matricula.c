@@ -70,29 +70,29 @@ void fSalvar(tAluno vAluno[], int qtd, char *filename)
     printf("Arquivo salvo com sucesso!!!\n");
 }
 
-void fCarregar(tAluno vAluno [], int *qtd, char *filename)
+int fCarregar(tAluno vAluno [], char *filename)
 {
-    *qtd = 0;
+
     printf("Carregando Arquivo...\n");
     FILE *file = fopen(filename, "r");
 
     if (file==NULL)
     {
         printf("Nao foi encontrado o arquivo %s!!!\n", filename);
-        return;
+        return 0;
     }
-    int i=0;
+    int qtd=0;
     while (fscanf(file, "%d;%[^;];%c;%f\n",
-                  &vAluno[i].matr, vAluno[i].nome, &vAluno[i].sexo, &vAluno[i].alt) == 4)
+                  &vAluno[qtd].matr, vAluno[qtd].nome, &vAluno[qtd].sexo, &vAluno[qtd].alt) == 4)
     {
         printf("#");
         Sleep(50);
-        i++;
+        qtd++;
     }
-    *qtd = i;
     printf("\n");
     fclose(file);
-    printf("%d alunos carregados com sucesso!\n", *qtd);
+    printf("%d alunos carregados com sucesso!\n", qtd);
+    return qtd;
 }
 
 int main()
@@ -103,7 +103,7 @@ int main()
     char filename[] = "aluno.csv";
 
 
-    fCarregar(vAluno, &qtd, filename);
+    qtd = fCarregar(vAluno, filename);
 
     do
     {
