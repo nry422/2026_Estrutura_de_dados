@@ -176,18 +176,16 @@ int main()
 
          for (j=0; j < qtd-1; j++) {
 
-      for (i=0; i<qtd-1-j; i++) {
-            ifs++;
-         if (v[i] > v[i+1]) {
-            trocas++;
-            temp = v[i];
-            v[i] = v[i+1];
-            v[i+1] = temp;
-            print_vetor(v, qtd);
+            for (i=0; i<qtd-1-j; i++) {
 
+               if (strcmp(vAluno[i].nome > vAluno.nome[i+1])) {
+                  temp = vAluno[i].nome;
+                  vAluno[i].nome = vAluno[i+1].nome;
+                  vAluno[i+1].nome = temp;
+
+               }
+            }
          }
-      }
-   }
 
 
          break;
